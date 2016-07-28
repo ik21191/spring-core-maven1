@@ -1,5 +1,8 @@
 package com.mypack;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -15,8 +18,16 @@ public class JdbcTemplateExample
     	e.setId(101);
     	e.setName("test");
     	e.setSalary(1002);
-    	edao.insert(e);
+    	//edao.insert(e);// insert single object
     	
+    	//Creating Employee list
+    	List<Employee> empList = new ArrayList<Employee>();
+    	empList.add(new Employee(101,"A",1001));
+    	empList.add(new Employee(102,"B",1101.00));
+    	empList.add(new Employee(103,"C",1401.23));
+    	System.out.println("Adding list of Employee............");
+    	edao.insert(empList);// insert list of Objects
+    	System.out.println("Added.");
     }
 }
 
