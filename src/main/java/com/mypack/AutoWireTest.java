@@ -5,6 +5,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.mypack.beans.A;
 
+
+
 public class AutoWireTest 
 {
     public static void main( String[] args ){
