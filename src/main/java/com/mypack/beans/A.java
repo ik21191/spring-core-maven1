@@ -6,6 +6,9 @@ public class A {
 	@Autowired
 	private B b;
 	
+	public A() {
+		System.out.println("Constructor of A is called.");
+	}
 	public void print(){
 		System.out.println("print() of A");
 	}
