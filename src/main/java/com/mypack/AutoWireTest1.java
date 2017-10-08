@@ -4,9 +4,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.mypack.service.StudentService;
 
 public class AutoWireTest1 {
-    public static void main( String[] args ){
-    	ApplicationContext context = new ClassPathXmlApplicationContext("auto-wired1.xml");
+    private static ApplicationContext context;
+
+	public static void main( String[] args ){
+    	context = new ClassPathXmlApplicationContext("auto-wired1.xml");
     	StudentService s = (StudentService) context.getBean("studentService");
     	System.out.println(s.createNewStudent());
+    	
     }
 }

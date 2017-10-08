@@ -3,7 +3,7 @@ package com.mypack.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.mypack.beans.Employee;
 
@@ -11,7 +11,7 @@ import com.mypack.beans.Employee;
 
 public class EmployeeDao implements Dao{
 
-	SimpleJdbcTemplate jdbcTemplate;
+	JdbcTemplate jdbcTemplate;
 	public void insert(Employee emp) {
 		String sql = "insert into Employee values("+emp.getId()+",'"+emp.getName()+"',"+emp.getSalary()+")";
 		jdbcTemplate.update(sql);
@@ -26,7 +26,7 @@ public class EmployeeDao implements Dao{
 		jdbcTemplate.batchUpdate(sql, parameters);
 	}
 	
-	public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 	
