@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+   
+	<bean id="ticket" class="com.mypack.spring.aware.Ticket" scope="prototype"/>
+	<bean id = "ticketClerkUsingBeanFactory" class="com.mypack.spring.aware.TicketClerkUsingBeanFactory" lazy-init="true"/>
+	<bean id = "ticketClerkUsingApplicationContext" class="com.mypack.spring.aware.TicketClerkUsingApplicationContext" lazy-init="true"/>
+	<!-- <bean id = "ticketClerk" class="com.mypack.spring.aware.TicketClerkUsingBeanFactory">
+		<property name="ticket" ref="ticket"/>
+	</bean> -->
+	
+	<!-- method look example -->
+	<bean id = "pizza" class = "com.mypack.spring.method.lookup.Pizza" scope="prototype" />
+	<bean id = "pizzaShop" class = "com.mypack.spring.method.lookup.PizzaShop">
+		<lookup-method name="makePizza" bean="pizza"/>
+	</bean>
+</beans>
