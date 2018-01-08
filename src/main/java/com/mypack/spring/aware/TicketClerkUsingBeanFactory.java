@@ -1,15 +1,17 @@
 package com.mypack.spring.aware;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
 
 public class TicketClerkUsingBeanFactory implements BeanFactoryAware {
+	private static Logger log = Logger.getLogger(TicketClerkUsingBeanFactory.class);
 
 	//private Ticket ticket;
 	private BeanFactory beanFactory = null;
 	public TicketClerkUsingBeanFactory() {
-		System.out.println("BeanFactoryAwareTest created...");
+		log.info("BeanFactoryAwareTest created...");
 	}
 	
 	@Override

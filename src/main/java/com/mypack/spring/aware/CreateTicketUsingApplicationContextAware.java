@@ -1,9 +1,11 @@
 package com.mypack.spring.aware;
 
+import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class CreateTicketUsingApplicationContextAware {
+	private static Logger log = Logger.getLogger(CreateTicketUsingApplicationContextAware.class); 
 
 	private static ApplicationContext applicationContext;
 
@@ -12,8 +14,8 @@ public class CreateTicketUsingApplicationContextAware {
 		TicketClerkUsingApplicationContext ticketClerk = (TicketClerkUsingApplicationContext)applicationContext.
 				getBean("ticketClerkUsingApplicationContext");
 		Ticket ticket1 = ticketClerk.getTicket();
-		System.out.println(ticket1.getId());
+		log.info(ticket1.getId());
 		Ticket ticket2 = ticketClerk.getTicket();
-		System.out.println(ticket2.getId());
+		log.info(ticket2.getId());
 	}
 }

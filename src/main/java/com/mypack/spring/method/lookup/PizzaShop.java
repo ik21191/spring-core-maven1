@@ -1,8 +1,11 @@
 package com.mypack.spring.method.lookup;
 
+import org.apache.log4j.Logger;
+
 public abstract class PizzaShop {
+	private static Logger log = Logger.getLogger(PizzaShop.class);
 	public PizzaShop() {
-		System.out.println("PizzaShop is created.");
+		log.info("PizzaShop is created.");
 	}
 	public abstract Pizza makePizza();
 }

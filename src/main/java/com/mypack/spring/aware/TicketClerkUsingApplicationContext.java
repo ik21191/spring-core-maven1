@@ -1,16 +1,18 @@
 package com.mypack.spring.aware;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 public class TicketClerkUsingApplicationContext implements ApplicationContextAware {
+	private static Logger log = Logger.getLogger(TicketClerkUsingApplicationContext.class);
 
 	// private Ticket ticket;
 	private ApplicationContext applicationContext = null;
 	
 	public TicketClerkUsingApplicationContext() {
-		System.out.println("TicketClerkUsingApplicationContext is created.");
+		log.info("TicketClerkUsingApplicationContext is created.");
 	}
 
 	public Ticket getTicket() {

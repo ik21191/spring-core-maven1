@@ -1,11 +1,13 @@
 package com.mypack.spring.aware;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 public class CreateTicketUsingBeanFactoryAware {
+	private static Logger log = Logger.getLogger(CreateTicketUsingBeanFactoryAware.class);
 
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
@@ -13,9 +15,9 @@ public class CreateTicketUsingBeanFactoryAware {
 		BeanFactory beanFactory = new XmlBeanFactory(resource);
 		TicketClerkUsingBeanFactory ticketClerk = (TicketClerkUsingBeanFactory)beanFactory.getBean("ticketClerkUsingBeanFactory");
 		Ticket ticket1 = ticketClerk.getTicket();
-		System.out.println(ticket1.getId());
+		log.info(ticket1.getId());
 		Ticket ticket2 = ticketClerk.getTicket();
-		System.out.println(ticket2.getId());
+		log.info(ticket2.getId());
 	}
 
 }
