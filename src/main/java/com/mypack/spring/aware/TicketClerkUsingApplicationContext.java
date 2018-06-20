@@ -9,7 +9,7 @@ public class TicketClerkUsingApplicationContext implements ApplicationContextAwa
 	private static Logger log = Logger.getLogger(TicketClerkUsingApplicationContext.class);
 
 	// private Ticket ticket;
-	private ApplicationContext applicationContext = null;
+	private ApplicationContext applicationContext;
 	
 	public TicketClerkUsingApplicationContext() {
 		log.info("TicketClerkUsingApplicationContext is created.");
